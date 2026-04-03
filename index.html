@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Chains 🐾</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="banner">
+    <div class="layout banner-content">
+      <h1>Tienda de Mascotas</h1>
+      <p>Descubre lo mejor en moda, accesorios y comodidad para tu compañero favorito.</p>
+      <a class="btn-ver-productos" href="#productos">Ver productos</a>
+    </div>
+  </header>
+
+  <section class="layout filtros">
+    <button onclick="filtrar('todos')" class="activo">Todos</button>
+    <button onclick="filtrar('collar')">Collares</button>
+    <button onclick="filtrar('ropa')">Ropa</button>
+    <button onclick="filtrar('accesorio')">Accesorios</button>
+    <input id="buscador" type="search" placeholder="Buscar producto..." oninput="buscar(this.value)">
+  </section>
+
+  <main class="layout flex">
+    <section id="productos" class="contenedor-productos" aria-label="Lista de productos">
+      <div class="card" data-categoria="ropa">
+        <img src="img/ref1.jpg" alt="sueter rojo">
+        <h3>Sueter Térmico Rojo</h3>
+        <p class="precio">$25.000</p>
+        <button onclick="addToCart('Sueter Térmico Rojo', 25000)">Agregar al carrito</button>
+      </div>
+
+      <div class="card" data-categoria="ropa">
+        <img src="img/ref2.jpg" alt="outfit rosa">
+        <h3>Sueter Térmico Rosa</h3>
+        <p class="precio">$20.000</p> 
+        <button onclick="addToCart('Sueter Térmico Rosa', 20000)">Agregar al carrito</button>
+      </div>
+
+      <div class="card" data-categoria="collar">
+        <img src="img/collar.webp" alt="Collar de Cuero">
+        <h3>Collar de Cuero</h3>
+        <p class="precio">$40.000</p>
+        <button onclick="addToCart('Collar de Cuero', 40000)">Agregar al carrito</button>
+      </div>
+
+
+      <div class="card" data-categoria="accesorio">
+        <div class="accesorio-img">
+          <img src="img/accesorio.jpg" alt="Correa Resistente">
+        </div>
+        <h3>Corbatín</h3>
+        <p class="precio">$30.000</p>
+        <button onclick="addToCart('Corbatín', 30000)">Agregar al carrito</button>
+      </div>
+
+      <div class="card" data-categoria="ropa">
+        <div class="accesorio-img">
+          <img src="img/ref6.jpg" alt="Collar de Cuero">
+        </div>
+        <h3>Sueter para fiesta</h3>
+        <p class="precio">$35.000</p>
+        <button onclick="addToCart('Sueter para fiesta', 35000)">Agregar al carrito</button>
+      </div>
+
+      <div class="card" data-categoria="accesorio">
+        <div class="accesorio-img">
+          <img src="img/plato.jpg" alt="Plato Antideslizante">
+        </div>
+        <h3>Plato Antideslizante</h3>
+        <p class="precio">$15.000</p>
+        <button onclick="addToCart('Plato Antideslizante', 15000)">Agregar al carrito</button>
+      </div>
+    </section>
+
+    <aside class="carrito">
+      <h2>Carrito</h2>
+      <ul id="lista-carrito" aria-label="Productos en el carrito"></ul>
+      <p>Total: <strong id="total">$0</strong></p>
+      <button id="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button id="checkout" onclick="checkout()">Finalizar compra</button>
+      <p id="mensaje" class="mensaje"></p>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="layout">
+      <p>© 2026 Pet Chains. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/573042003759?text=Hola%20Pet%20Chains%20%F0%9F%90%BE%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" class="whatsapp-fixed" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>
